@@ -22,6 +22,9 @@ game:GetService("RunService").Heartbeat:Connect(function()
         FireServer(RemoteEvent, SendBuffer, ObjectTable)
         BufferSize = 0
         ObjectIndex = 0
+
+        print("set objectindex to 0")
+
         BufferCapacity = 64
         CurrentBuffer = buffer.create(64)
         CurrentPosition = 0
@@ -186,6 +189,9 @@ BufferUtils.WriteObject = function(Value)
     else
         ObjectIndex = ObjectIndex + 1
         ObjectTable[ObjectIndex] = Value
+
+        print("writing at:",ObjectIndex)
+
         buffer.writeu8(CurrentBuffer, CurrentPosition, ObjectIndex)
         return
     end

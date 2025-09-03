@@ -21,6 +21,7 @@ game:GetService("RunService").Heartbeat:Connect(function()
         buffer.copy(SendBuffer, 0, CurrentBuffer, 0, BufferSize)
         FireServer(RemoteEvent, SendBuffer, ObjectTable)
         BufferSize = 0
+        ObjectIndex = 0
         BufferCapacity = 64
         CurrentBuffer = buffer.create(64)
         CurrentPosition = 0
